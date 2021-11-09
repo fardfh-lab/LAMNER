@@ -1,0 +1,5 @@
+flair==0.9
+torch==1.6.0
+torchtext==0.6.0
+six==1.14.0
+rouge==1.0.0

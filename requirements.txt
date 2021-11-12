@@ -3,3 +3,5 @@ torch==1.6.0
 torchtext==0.6.0
 six==1.14.0
 rouge==1.0.0
+javalang==0.13.0
+git+https://github.com/casics/spiral.git

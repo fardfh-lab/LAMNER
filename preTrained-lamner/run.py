@@ -14,19 +14,19 @@ from src.decoder import Decoder
 from src.seq2seq import Seq2Seq, train, evaluate, get_preds
 from six.moves import map
 
-def main():
+def run_seq2seq(args):
   set_seed()
   ##Loading parameters for the model
-  parser = argparse.ArgumentParser(description="Setting hyperparameters for Lamner")
-  parser.add_argument("--batch_size", type=int, default=16, help="Batch size to use for seq2seq model")
-  parser.add_argument("--embedding_size", type=int, default=512, help="Embedding size to use for seq2seq model")
-  parser.add_argument("--hidden_dimension", type=int, default=512, help="Embedding size to use for seq2seq model")
-  parser.add_argument("--dropout", type=float, default=0.5, help="Dropout to use for seq2seq model")
-  parser.add_argument("--epochs", type=int, default=200, help="Epochs to use for seq2seq model")
-  parser.add_argument("--static", type=bool, default=False, help="Keep weigts static after one epoch")
-  parser.add_argument("--learning_rate", type=float, default=0.1, help="Learning rate")
-  parser.add_argument("--infer", type=bool, default=False, help="Inference")
-  args = parser.parse_args()
+  #parser = argparse.ArgumentParser(description="Setting hyperparameters for Lamner")
+  #parser.add_argument("--batch_size", type=int, default=16, help="Batch size to use for seq2seq model")
+  #parser.add_argument("--embedding_size", type=int, default=512, help="Embedding size to use for seq2seq model")
+  #parser.add_argument("--hidden_dimension", type=int, default=512, help="Embedding size to use for seq2seq model")
+  #parser.add_argument("--dropout", type=float, default=0.5, help="Dropout to use for seq2seq model")
+  #parser.add_argument("--epochs", type=int, default=200, help="Epochs to use for seq2seq model")
+  #parser.add_argument("--static", type=bool, default=False, help="Keep weigts static after one epoch")
+  #parser.add_argument("--learning_rate", type=float, default=0.1, help="Learning rate")
+  #parser.add_argument("--infer", type=bool, default=False, help="Inference")
+  #args = parser.parse_args()
   CLIP = 1
   make_weights_static = args.static
   best_valid_loss = float('inf')
@@ -170,5 +170,5 @@ def main():
   p, t = get_preds(test_data, SRC, TRG, model, device)
   write_files(p,t,epoch=0, test=True)
   
-if __name__ == '__main__':
-  main()
+#if __name__ == '__main__':
+#  main()
